@@ -195,7 +195,7 @@ module ROBundle
       if Util.is_absolute_uri?(entry)
         entry = entry.to_s
       else
-        entry = entry_name(entry)
+        entry = ZipContainer::Util.entry_name(entry)
       end
 
       aggregates.each do |agg|
@@ -287,7 +287,7 @@ module ROBundle
 
       # The preserve manifest flag is STRICTLY for internal use only.
       unless preserve_manifest
-        name = entry_name(entry)
+        name = ZipContainer::Util.entry_name(entry)
         @manifest.remove_aggregate("/#{name}")
         remove_annotation("/#{name}")
       end
@@ -312,7 +312,7 @@ module ROBundle
       if object.is_a?(Aggregate)
         file = object.file_entry
       elsif !Util.is_absolute_uri?(object)
-        object = entry_name(object)
+        object = ZipContainer::Util.entry_name(object)
         file = Util.strip_leading_slash(object)
       end
 

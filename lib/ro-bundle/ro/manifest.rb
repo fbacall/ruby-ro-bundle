@@ -90,7 +90,7 @@ module ROBundle
       raise Errno::ENOENT if container.find_entry(entry).nil?
 
       # Mangle the filename according to the RO Bundle specification.
-      name = entry_name(entry)
+      name = ZipContainer::Util.entry_name(entry)
       dir = "#{@parent.full_name}/"
       name = name.start_with?(dir) ? name.sub(dir, "") : "/#{name}"
 

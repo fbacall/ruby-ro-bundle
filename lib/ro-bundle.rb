@@ -15,6 +15,7 @@ require "uri"
 require "uuid"
 require "addressable"
 
+require 'zip-container/util'
 require "ro-bundle/version"
 require "ro-bundle/util"
 require "ro-bundle/exceptions"

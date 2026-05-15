@@ -1,5 +1,9 @@
 = Changes log for the RO Bundle Ruby Gem
 
+== Version 0.4.0
+
+* Loosened dependency versions. Ensure compatibility with ucf version 3 and zip-container version 6.
+
 == Version 0.2.3
 
 * Re-added missing `manifest` reader to ROBundle::File.
